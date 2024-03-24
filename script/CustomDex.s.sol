@@ -2,11 +2,14 @@
 pragma solidity ^0.8.13;
 
 import {Script, console} from "forge-std/Script.sol";
+import {CustomDex} from "src/CustomDex.sol";
 
-contract CounterScript is Script {
+contract CustomDexScript is Script {
     function setUp() public {}
 
     function run() public {
-        vm.broadcast();
+        vm.startBroadcast();
+        new CustomDex();
+        vm.stopBroadcast();
     }
 }
